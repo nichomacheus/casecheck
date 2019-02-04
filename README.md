@@ -28,3 +28,12 @@
 	PUT /hospitals/:id -- update a hospital, expects an object of the form {hospital: {-- put new key/value pairs here (this must include the id of the hospital)}}
 	DELETE /hospitals/:id -- delete a hospital
 
+	POST /login -- login 
+	DELETE /logout -- logout
+
+	GET /users/:id -- get a user 
+	POST /users -- create a user
+	PUT /users/:id -- update a user
+	DELETE /users/:id -- delete a user
+
+	
