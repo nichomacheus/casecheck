@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	include HospitalsHelper 
 
   def show
   	# return the user
@@ -8,10 +9,11 @@ class UsersController < ApplicationController
 
   def create
   	# create a user
-    user = User.create(user_params)
+    user = User.new(user_params)
     if user.save then r = user 
-    else r = "Error creating user" end
-    	send_response(r)
+    else r = "Error creating user" 
+    end
+    send_response(r)
   end
 
   def update
@@ -24,7 +26,7 @@ class UsersController < ApplicationController
   def destroy
   	# delete a user
     user = User.find(params[:id])
-    if user then user.destroy else r = "Error deleting user"
+    if user then user.destroy else r = "Error deleting user" end
     send_response(r ? r : "User successfully deleted!")
   end
 

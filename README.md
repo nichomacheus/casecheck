@@ -4,7 +4,7 @@
 
 * In order to utilize this API you must have the latest version of Ruby and Rails installed. I recommend using the Ruby Version Manager (RVM) to download Ruby and Rails if you have not done so already. 
 
-* You should create a PostgreSQL database called casecheck_development for development testing of this API. Should you wish to alter the database name or other specifics related to the database do so in the config/database.yml file.
+* You should create a PostgreSQL database called casecheck_development for using this API. You should also create a PSQL database called casecheck_test for running the test suite. Should you wish to alter the database name or other specifics related to the database do so in the config/database.yml file.
 
 * Once you have created the database, run:
 
@@ -36,4 +36,6 @@
 	PUT /users/:id -- update a user
 	DELETE /users/:id -- delete a user
 
-	
+* To run the test call 
+
+	$ rails test
