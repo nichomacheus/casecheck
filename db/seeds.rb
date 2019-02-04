@@ -10,12 +10,11 @@
 hospitals = JSON.parse(File.read(Rails.root.join('coding-challenge-assets','hospitals.json')))
 
 hospitals.each do |hospital|
-	# convert to hash
-	h = hospital.to_h 
-	# set hospital id == id (records in the db will automatically have an id column)
-	h[:hospital_id] = h[:id]
-	# delete the id entry
-	h.delete(:id)
-	# create the record
-  	Hospital.create(h)
+  	h = Hospital.create(hospital.to_h)
+	# standardize state,city,and address
+	r.state = r.state.upcase
+	r.city = r.city.upcase
+	r.address = r.address.upcase
+	# save
+	r.save!
 end
