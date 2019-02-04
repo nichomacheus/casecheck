@@ -10,11 +10,5 @@
 hospitals = JSON.parse(File.read(Rails.root.join('coding-challenge-assets','hospitals.json')))
 
 hospitals.each do |hospital|
-  	h = Hospital.create(hospital.to_h)
-	# standardize state,city,and address
-	r.state = r.state.upcase
-	r.city = r.city.upcase
-	r.address = r.address.upcase
-	# save
-	r.save!
+  	Hospital.create(hospital.to_h)
 end

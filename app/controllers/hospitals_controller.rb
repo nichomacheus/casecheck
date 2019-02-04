@@ -31,10 +31,6 @@ class HospitalsController < ApplicationController
 		h = !Hospital.find(hospital_params[:id]) rescue true 
 		if hospital_params && h
 			r = Hospital.create(hospital_params)
-			# standardize state,city,and address
-			r.state = r.state.upcase
-			r.city = r.city.upcase
-			r.address = r.address.upcase
 			# save
 			r.save!
 		# otherwise respond with error
